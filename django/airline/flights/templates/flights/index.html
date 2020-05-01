@@ -1,0 +1,16 @@
+{% extends "flights/base.html" %}
+{% block title%}
+Flights
+{% endblock%}
+
+{% block body %}
+
+<h1>Flights</h1>
+<ul class="list-group">
+    {% for flight in flights %}
+    <li class="list-group-item">
+        <a href="{% url 'flight' flight.id %}">{{ flight }}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock%}

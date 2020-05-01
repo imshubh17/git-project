@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>hello {{name}} !</h1>
+{% load render_table from django_tables2 %}
+{% render_table df_table %}
+
+<form action="add",method="post">
+    {% csrf_token %}
+    enter first num: <input type="text" name="n1"><br>
+    enter second num: <input type="text" name="n2"><br>
+
+    <input type="submit">
+
+</form>
+
+{% endblock %}
